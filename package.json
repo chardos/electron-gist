@@ -24,5 +24,9 @@
   "homepage": "https://github.com/electron/electron-quick-start#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.37.8"
+  },
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "jsdom": "^9.0.0"
   }
 }
