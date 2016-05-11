@@ -1,8 +1,7 @@
 # Gist viewer
 
 ## Todos
-- sass it
-- normalize it
+- get font in
 - Get username
 - save that username to cookie
 - Create designs

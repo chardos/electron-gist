@@ -1,3 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+input{
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #88cef9;
+  width: 100%;
+  color: white;
+  padding: 10px 0;
+  outline: 0;
+}
+.pane{
+  padding: 30px;
+}
+
 .UserSelect{
   position: absolute;
   width: 100%;
@@ -6,7 +22,17 @@
   z-index: 20;
   background-image: linear-gradient(#00b7f0, #1e83f5);
 }
-
+.UserSelect-input-wrap{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  padding: 0 30px;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.UserSelect-input{
+  text-align: center;
+}
 .Gists-wrap{
 
 }
