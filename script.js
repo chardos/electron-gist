@@ -1,26 +1,33 @@
 var username;
 $(document).on('ready', function(){
-  usernameInputInit()
-
-
+  usernameInit()
 })
 
-function usernameInputInit(){
+function usernameInit(){
+  if(localStorage.username){
+    showGistPage();
+    return;
+  }
   var $input = $('.js-username-input')
   $input.focus();
   $input.on('keydown', function(e){
     if(e.which == 13) {
       username = $(this).val();
-      $('.UserSelect').addClass('s-hidden');
-      $('.js-search').focus();
-      getGists();
+      localStorage.username = username;
+      showGistPage();
     }
   })
 }
 
+function showGistPage(){
+  $('.UserSelect').addClass('s-hidden');
+  $('.js-search').focus();
+  getGists();
+}
+
 function getGists(){
   $.ajax({
-    url: `https://api.github.com/users/${username}/gists`
+    url: `https://api.github.com/users/${localStorage.username}/gists`
   })
   .done(function(data){
     generateLinks(data)
