@@ -58,6 +58,7 @@ input{
   height: 65px;
   background-color: white;
   box-shadow: 0 2px 7px rgba(0,0,0,0.08);
+  z-index: 15;
 }
 .Header-avatar{
   float: left;
@@ -81,9 +82,34 @@ input{
   opacity: 0.8;
   margin: 21px 30px;
 }
+
+.Search-wrap{
+  position: relative;
+}
+.Search-icon{
+  position: absolute;
+  left: 9px;
+  top: 13px;
+  width: 15px;
+}
+.Search-input{
+  padding-left: 40px;
+}
 .Gists-wrap{
   padding-top: 90px;
 }
+.Gist-list-item{
+  list-style-type: none;
+}
 .Gist-link{
-  display: block;
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  line-height: 40px;
+  opacity: 0.7;
+  transition: .3s all;
+}
+.Gist-link:hover{
+  opacity: 1;
 }

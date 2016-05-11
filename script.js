@@ -73,7 +73,8 @@ function generateLinks(gists){
 }
 
 function generateLink(name, url){
-  var $li = $('<li />');
+  var $li = $('<li />')
+    .addClass('Gist-list-item');
   var $a = $('<a>' + name + '</a>')
     .attr('href', url)
     .attr('target', '_blank')
