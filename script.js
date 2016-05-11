@@ -1,22 +1,28 @@
 var username;
 $(document).on('ready', function(){
+  eventHandlersInit()
   usernameInit()
 })
-
-function usernameInit(){
-  if(localStorage.username){
-    showGistPage();
-    return;
-  }
-  var $input = $('.js-username-input')
-  $input.focus();
-  $input.on('keydown', function(e){
+function eventHandlersInit(){
+  $('.js-username-input').on('keydown', function(e){
     if(e.which == 13) {
       username = $(this).val();
       localStorage.username = username;
       showGistPage();
     }
   })
+  $('.js-change').on('click', function(){
+    hideGistPage();
+  })
+}
+
+function usernameInit(){
+  if(localStorage.username){
+    showGistPage();
+    return;
+  }
+  $('.js-username-input').focus();
+
 }
 
 function showGistPage(){
@@ -24,6 +30,11 @@ function showGistPage(){
   $('.js-search').focus();
   getUserInfo();
   getGists();
+}
+
+function hideGistPage(){
+  $('.UserSelect').removeClass('s-hidden');
+  $('.js-username-input').focus();
 }
 
 function getUserInfo(){
@@ -43,6 +54,7 @@ function getGists(){
     url: `https://api.github.com/users/${localStorage.username}/gists`
   })
   .done(function(data){
+    $('.list').html('');
     generateLinks(data)
 
     var options = {
