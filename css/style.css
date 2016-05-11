@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'SourceSans';
+  src: url('../fonts/SourceSansPro-Regular.ttf');
+  font-weight: 400;
+}
+
 *{
   box-sizing: border-box;
+}
+body,html{
+  font-family: 'SourceSans', sans-serif;
 }
 input{
   background-color: transparent;
