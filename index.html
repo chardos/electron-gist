@@ -5,8 +5,7 @@
     <title>Hello World!</title>
 
     <link rel="stylesheet" media="all" href="./css/style.css" />
-    <script>window.$ = window.jQuery = require('./vendor/jquery.js');</script>
-    <script src="script.js" />
+    <!-- <script src="vendor/list.js" /> -->
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -18,6 +17,9 @@
 
   <script>
     // You can also require other files to run in this process
+    window.$ = window.jQuery = require('./vendor/jquery.js');
+    require('./vendor/list.js')
     require('./renderer.js')
+    require('./script.js')
   </script>
 </html>
