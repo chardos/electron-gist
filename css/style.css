@@ -4,6 +4,7 @@
   height: 100%;
   background-color: #eee;
   z-index: 20;
+  background-image: linear-gradient(#00b7f0, #1e83f5);
 }
 
 .Gists-wrap{
