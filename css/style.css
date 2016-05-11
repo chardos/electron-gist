@@ -9,6 +9,7 @@
 }
 body,html{
   font-family: 'SourceSans', sans-serif;
+  height: 100%;
 }
 input{
   background-color: transparent;
@@ -21,15 +22,19 @@ input{
 }
 .pane{
   padding: 30px;
+  background-image: linear-gradient(#00b7f0, #1e83f5);
+  height: 100%;
 }
 
 .UserSelect{
   position: absolute;
   width: 100%;
-  height: 100%;
   background-color: #eee;
   z-index: 20;
-  background-image: linear-gradient(#00b7f0, #1e83f5);
+  transition: all .3s;
+}
+.UserSelect.s-hidden{
+  transform: translateX(-100%);
 }
 .UserSelect-input-wrap{
   position: absolute;

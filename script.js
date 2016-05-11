@@ -1,11 +1,26 @@
-var $ = require('./vendor/jquery.js');
+var username;
 $(document).on('ready', function(){
-  getGists();
+  usernameInputInit()
+
+
 })
+
+function usernameInputInit(){
+  var $input = $('.js-username-input')
+  $input.focus();
+  $input.on('keydown', function(e){
+    if(e.which == 13) {
+      username = $(this).val();
+      $('.UserSelect').addClass('s-hidden');
+      $('.js-search').focus();
+      getGists();
+    }
+  })
+}
 
 function getGists(){
   $.ajax({
-    url: 'https://api.github.com/users/chardos/gists'
+    url: `https://api.github.com/users/${username}/gists`
   })
   .done(function(data){
     generateLinks(data)
