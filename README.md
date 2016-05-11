@@ -1,5 +1,6 @@
 # Gist viewer
 
 ## Todos
-- save that username to cookie
-- Create designs
+- add change link script
+- style search bar
+- style gist list

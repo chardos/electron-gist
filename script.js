@@ -22,9 +22,22 @@ function usernameInit(){
 function showGistPage(){
   $('.UserSelect').addClass('s-hidden');
   $('.js-search').focus();
+  getUserInfo();
   getGists();
 }
 
+function getUserInfo(){
+  $.ajax({
+    url: `https://api.github.com/users/${localStorage.username}`
+  })
+  .done(function(data){
+    populateHeader(data.avatar_url);
+  })
+}
+function populateHeader(image){
+  $('.Header-avatar').css('background-image', `url(${image})`)
+  $('.Header-username').html(localStorage.username)
+}
 function getGists(){
   $.ajax({
     url: `https://api.github.com/users/${localStorage.username}/gists`
