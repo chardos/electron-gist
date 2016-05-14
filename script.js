@@ -1,4 +1,5 @@
 var username;
+
 $(document).on('ready', function(){
   eventHandlersInit()
   usernameInit()
