@@ -99,6 +99,9 @@ input{
 .Gists-wrap{
   margin-top: 65px;
 }
+.Gist-list{
+  padding: 0 0 40px;
+}
 .Gist-list-item{
   list-style-type: none;
 }
@@ -109,8 +112,9 @@ input{
   color: white;
   line-height: 40px;
   opacity: 0.7;
-  transition: .3s all;
+  transition: .2s all;
 }
 .Gist-link:hover{
   opacity: 1;
+  transform: translateX(5px);
 }

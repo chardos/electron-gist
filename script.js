@@ -16,6 +16,13 @@ function eventHandlersInit(){
   $('.js-change').on('click', function(){
     hideGistPage();
   })
+  $('.js-search').on('keydown', function(e){
+    if(e.which == 13) {
+      var url = $('.Gist-list-item:first').find('a').attr('href');
+      window.open(url)
+      // require("shell").open("http://www.google.com")
+    }
+  })
 }
 
 function usernameInit(){
