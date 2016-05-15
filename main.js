@@ -4,6 +4,7 @@ const app = electron.app
 const globalShortcut = electron.globalShortcut;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const ipc = require('electron').ipcMain
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -60,7 +61,6 @@ app.on('will-quit', function() {
   globalShortcut.unregisterAll();
 });
 
-const ipc = require('electron').ipcMain
 
 ipc.on('asynchronous-message', function (event, arg) {
   app.quit();
