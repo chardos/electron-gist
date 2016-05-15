@@ -5,6 +5,7 @@ const {ipcRenderer} = require('electron');
 require('./partials/mainmenu.js')
 
 ipcRenderer.on('focus-element', (event, selector) => {
-    console.log('focuzzin');
-    document.querySelector(selector).focus();
+  var input = document.querySelector(selector);
+  input.value = '';
+  input.focus();
 });
