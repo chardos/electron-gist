@@ -11,12 +11,12 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 400, height: 600, frame: false})
+  mainWindow = new BrowserWindow({width: 400, height: 600})
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
@@ -59,6 +59,12 @@ app.on('will-quit', function() {
   // Unregister all shortcuts.
   globalShortcut.unregisterAll();
 });
+
+const ipc = require('electron').ipcMain
+
+ipc.on('asynchronous-message', function (event, arg) {
+  app.quit();
+})
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
